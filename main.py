@@ -79,8 +79,8 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # Ensure the API key is available
-if not OPENAI_API_KEY:
-    raise ValueError("OpenAI API key not found in environment variables.")
+# if not OPENAI_API_KEY:
+#     raise ValueError("OpenAI API key not found in environment variables.")
 
 # Initialize AsyncOpenAI with the correct API key
 client = AsyncOpenAI(api_key=OPENAI_API_KEY)
