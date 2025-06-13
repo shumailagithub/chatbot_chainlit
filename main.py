@@ -7,15 +7,14 @@ import os
 
 load_dotenv()
 #-------------------------------------------------------------------------------
-api_key  = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY  = os.getenv("OPENAI_API_KEY")
 
 # if not api_key:
 #     raise ValueError("OpenAI API key not found in environment variables.")
 
 # Initialize AsyncOpenAI with the API key
-client = AsyncOpenAI(api_key=api_key)
-#-------------------------------------------------------------------------------
-client = AsyncOpenAI()
+client = AsyncOpenAI(OPENAI_API_KEY=OPENAI_API_KEY, base_url="https://api.openai.com/v1")
+#------------------------------------------------------------------------------
 
 # Instrument the OpenAI client
 cl.instrument_openai()
